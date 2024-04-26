@@ -5,7 +5,13 @@
       "name": "/user",
       "lambdaFunction": "userFunction",
       "permissions": {
-        "setting": "open"
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
       }
     }
   }
