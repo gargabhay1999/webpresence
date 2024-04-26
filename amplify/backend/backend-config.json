@@ -1,5 +1,19 @@
 {
   "api": {
+    "test": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "userFunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "webpresence": {
       "dependsOn": [],
       "output": {
@@ -43,6 +57,31 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "Cognito"
+    }
+  },
+  "function": {
+    "userFunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_userFunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userFunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_userFunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userFunction"
+        }
+      ]
     }
   },
   "storage": {
