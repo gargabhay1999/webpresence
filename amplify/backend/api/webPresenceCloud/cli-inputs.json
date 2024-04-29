@@ -7,23 +7,16 @@
       "permissions": {
         "setting": "private",
         "auth": [
-          "read"
+          "create",
+          "read",
+          "update",
+          "delete"
         ]
       }
     },
     "/get-scan-data": {
       "name": "/get-scan-data",
-      "lambdaFunction": "getScanData",
-      "permissions": {
-        "setting": "private",
-        "auth": [
-          "read"
-        ]
-      }
-    },
-    "/config": {
-      "name": "/config",
-      "lambdaFunction": "config",
+      "lambdaFunction": "scanData",
       "permissions": {
         "setting": "private",
         "auth": [

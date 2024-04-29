@@ -78,7 +78,7 @@
             "Arn"
           ]
         },
-        "Runtime": "python3.8",
+        "Runtime": "nodejs18.x",
         "Layers": [],
         "Timeout": 25
       }
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "webpresenceLambdaRole6570512b",
+            "webpresenceLambdaRole2999a477",
             {
               "Fn::Join": [
                 "",
                 [
-                  "webpresenceLambdaRole6570512b",
+                  "webpresenceLambdaRole2999a477",
                   "-",
                   {
                     "Ref": "env"

@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "config",
+            "scanData",
             {
               "Fn::Join": [
                 "",
                 [
-                  "config",
+                  "scanData",
                   "-",
                   {
                     "Ref": "env"
@@ -78,7 +78,7 @@
             "Arn"
           ]
         },
-        "Runtime": "python3.8",
+        "Runtime": "nodejs18.x",
         "Layers": [],
         "Timeout": 25
       }
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "webpresenceLambdaRole1a445588",
+            "webpresenceLambdaRoleda46b7f5",
             {
               "Fn::Join": [
                 "",
                 [
-                  "webpresenceLambdaRole1a445588",
+                  "webpresenceLambdaRoleda46b7f5",
                   "-",
                   {
                     "Ref": "env"

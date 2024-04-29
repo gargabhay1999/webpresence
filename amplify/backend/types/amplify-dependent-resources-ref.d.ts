@@ -23,14 +23,7 @@ export type AmplifyDependentResourcesAttributes = {
     }
   },
   "function": {
-    "config": {
-      "Arn": "string",
-      "LambdaExecutionRole": "string",
-      "LambdaExecutionRoleArn": "string",
-      "Name": "string",
-      "Region": "string"
-    },
-    "getScanData": {
+    "scanData": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
       "LambdaExecutionRoleArn": "string",

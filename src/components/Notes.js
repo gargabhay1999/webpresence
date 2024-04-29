@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import "@aws-amplify/ui-react/styles.css";
-import { generateClient, post } from 'aws-amplify/api';
+import { generateClient, post, get } from 'aws-amplify/api';
 import {
     Button,
     Flex,
@@ -23,8 +23,8 @@ const Notes = () => {
 
     useEffect(() => {
         fetchNotes();
-        // postTodo();
         getScanData();
+        triggerScan();
     }, []);
 
     async function getScanData() {
@@ -32,8 +32,34 @@ const Notes = () => {
             const restOperation = get({
                 apiName: 'webPresenceCloud',
                 path: '/get-scan-data',
-                params: {
-                    email: 'test@gmail.com'
+                options: {
+                    queryParams: {
+                        email: 'test@gmail.com'
+                    }
+                }
+            });
+
+            console.log(restOperation)
+
+            const { body } = await restOperation.response;
+            const response = await body.json();
+
+            console.log('GET call succeeded');
+            console.log(response);
+        } catch (e) {
+            console.log('GET call failed: ', JSON.parse(e.response.body));
+        }
+    }
+
+    async function triggerScan() {
+        try {
+            const restOperation = get({
+                apiName: 'webPresenceCloud',
+                path: '/trigger-scan',
+                options: {
+                    queryParams: {
+                        email: 'test@gmail.com'
+                    }
                 }
             });
 
