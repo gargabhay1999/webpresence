@@ -38,8 +38,8 @@ const Dashboard = () => {
             const response = await body.json();
 
             console.log('GET call succeeded');
-            console.log(response[0]);
-            setScanData(response[0]);
+            console.log(response[0]['scan_data']);
+            setScanData(response[0]['scan_data']);
         } catch (e) {
             console.log('GET call failed: ', JSON.parse(e.response.body));
         }
@@ -65,8 +65,8 @@ const Dashboard = () => {
             const response = await body.json();
 
             console.log('GET call succeeded');
-            console.log(response);
-            setScanData(response);
+            console.log(response['scanData']);
+            setScanData(response['scanData']);
         } catch (e) {
             console.log('GET call failed: ', JSON.parse(e.response.body));
         }
@@ -84,7 +84,7 @@ const Dashboard = () => {
                     justifyContent="center"
                     alignItems="center"
                 >
-                    <Text as="span">{scanData['scan_data']}</Text>
+                    <Text as="span">{scanData}</Text>
                 </Flex>
 
             </View>
