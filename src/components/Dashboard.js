@@ -66,7 +66,7 @@ const Dashboard = () => {
 
             console.log('GET call succeeded');
             console.log(response['scanData']);
-            setScanData(response['scanData']);
+            setScanData(JSON.stringify(response['scanData']));
         } catch (e) {
             console.log('GET call failed: ', JSON.parse(e.response.body));
         }
