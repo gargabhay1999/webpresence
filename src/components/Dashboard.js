@@ -47,12 +47,16 @@ const Dashboard = () => {
 
     async function triggerScan() {
         try {
+            const { idToken } = (await fetchAuthSession()).tokens ?? {};
+            const email = idToken ? idToken['payload']['email'] : null;
+            console.log("User's email:", idToken['payload']['email']);
+
             const restOperation = get({
                 apiName: 'webPresenceCloud',
                 path: '/trigger-scan',
                 options: {
                     queryParams: {
-                        email: 'test@gmail.com'
+                        email: email
                     }
                 }
             });
@@ -62,6 +66,7 @@ const Dashboard = () => {
 
             console.log('GET call succeeded');
             console.log(response);
+            setScanData(response);
         } catch (e) {
             console.log('GET call failed: ', JSON.parse(e.response.body));
         }

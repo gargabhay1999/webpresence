@@ -12,6 +12,9 @@ See the License for the specific language governing permissions and limitations 
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+const { exec } = require('child_process');
+const fs = require('fs');
+const AWS = require('aws-sdk');
 
 // declare a new express app
 const app = express()
@@ -19,72 +22,110 @@ app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "*")
   next()
 });
 
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
 /**********************
  * Example get method *
  **********************/
 
-app.get('/trigger-scan', async function(req, res) {
+app.get('/trigger-scan', async function (req, res) {
   // Add your code here
   const { email } = req.query;
   console.log("Making mosint scan for :", email);
-  res.json({success: 'get call succeedd!', url: req.url});
+
+  const command = `/var/task/mosint-x86_64 ${email} -s -o /tmp/output.json -c /var/task/config.yaml`;
+  console.log("Executing command:", command);
+
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error executing command: ${error}`);
+      return res.status(500).json({ error: 'Failed to execute scan' });
+    }
+
+    fs.readFile('/tmp/output.json', 'utf8', (err, data) => {
+      if (err) {
+        console.error(`Error reading file: ${err}`);
+        return res.status(500).json({ error: 'Failed to read scan data' });
+      }
+
+      const scanData = JSON.parse(data);
+      const params = {
+        TableName: 'webpresence-scan-storage',
+        Item: {
+          'user_email': email,
+          'timestamp': Date.now().toString(),
+          'scan_data': JSON.stringify(scanData)
+        }
+      };
+
+      dynamodb.put(params, (err, data) => {
+        if (err) {
+          console.error(`DynamoDB error: ${err}`);
+          return res.status(500).json({ error: 'Failed to store scan data' });
+        }
+
+        return res.json({ scanData });
+      });
+
+    });
+  });
 });
 
-app.get('/trigger-scan/*', function(req, res) {
+app.get('/trigger-scan/*', function (req, res) {
   // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
+  res.json({ success: 'get call succeed!', url: req.url });
 });
 
 /****************************
 * Example post method *
 ****************************/
 
-app.post('/trigger-scan', function(req, res) {
+app.post('/trigger-scan', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 });
 
-app.post('/trigger-scan/*', function(req, res) {
+app.post('/trigger-scan/*', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 });
 
 /****************************
 * Example put method *
 ****************************/
 
-app.put('/trigger-scan', function(req, res) {
+app.put('/trigger-scan', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
 
-app.put('/trigger-scan/*', function(req, res) {
+app.put('/trigger-scan/*', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
 
 /****************************
 * Example delete method *
 ****************************/
 
-app.delete('/trigger-scan', function(req, res) {
+app.delete('/trigger-scan', function (req, res) {
   // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
+  res.json({ success: 'delete call succeed!', url: req.url });
 });
 
-app.delete('/trigger-scan/*', function(req, res) {
+app.delete('/trigger-scan/*', function (req, res) {
   // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
+  res.json({ success: 'delete call succeed!', url: req.url });
 });
 
-app.listen(3000, function() {
-    console.log("App started")
+app.listen(3000, function () {
+  console.log("App started")
 });
 
 // Export the app object. When executing the application local this does nothing. However,

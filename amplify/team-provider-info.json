@@ -26,7 +26,7 @@
       "function": {
         "triggerScan": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
-          "s3Key": "amplify-builds/triggerScan-6d7354507a67786d5978-build.zip"
+          "s3Key": "amplify-builds/triggerScan-7377506d5052562f6642-build.zip"
         },
         "scanData": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
