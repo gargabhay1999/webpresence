@@ -23,30 +23,30 @@ const Notes = () => {
 
     useEffect(() => {
         fetchNotes();
-        postTodo();
+        // postTodo();
     }, []);
 
-    async function postTodo() {
-        try {
-          const restOperation = post({
-            apiName: 'test',
-            path: '/user',
-            options: {
-              body: {
-                message: 'Mow the lawn'
-              }
-            }
-          });
+    // async function postTodo() {
+    //     try {
+    //       const restOperation = post({
+    //         apiName: 'test',
+    //         path: '/user',
+    //         options: {
+    //           body: {
+    //             message: 'Mow the lawn'
+    //           }
+    //         }
+    //       });
       
-          const { body } = await restOperation.response;
-          const response = await body.json();
+    //       const { body } = await restOperation.response;
+    //       const response = await body.json();
       
-          console.log('POST call succeeded');
-          console.log(response);
-        } catch (e) {
-          console.log('POST call failed: ', JSON.parse(e.response.body));
-        }
-      }
+    //       console.log('POST call succeeded');
+    //       console.log(response);
+    //     } catch (e) {
+    //       console.log('POST call failed: ', JSON.parse(e.response.body));
+    //     }
+    //   }
 
     async function fetchNotes() {
         const apiData = await client.graphql({ query: listNotes });

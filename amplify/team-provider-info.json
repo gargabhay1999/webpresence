@@ -17,17 +17,10 @@
         "webpresence7f7a11b9": {}
       },
       "api": {
-        "webpresence": {},
-        "test": {}
+        "webpresence": {}
       },
       "storage": {
         "imagestorage": {}
-      },
-      "function": {
-        "userFunction": {
-          "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
-          "s3Key": "amplify-builds/userFunction-6e7468576748592f466c-build.zip"
-        }
       }
     }
   }
