@@ -27,11 +27,11 @@ const NavBar = ({ signOut }) => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav variant="underline" defaultActiveKey="/home" className="me-auto">
+                            <Nav.Link href="dashboard" className="underline-on-active">Dashboard</Nav.Link>
                             <Nav.Link href="notes" className="underline-on-active">Notes</Nav.Link>
                         </Nav><Nav>
-                            <NavDropdown title={"Abhay Garg"} id="collapsible-nav-dropdown">
-                                <NavDropdown.Item href="useritems" className="underline-on-active">View Items</NavDropdown.Item>
-                                <NavDropdown.Item href="userprofile" className="underline-on-active">Profile</NavDropdown.Item>
+                            <NavDropdown title={"User"} id="collapsible-nav-dropdown">
+                                <NavDropdown.Item href="#" className="underline-on-active">Profile</NavDropdown.Item>
                             </NavDropdown>
                             <Button onClick={signOut}>Sign Out</Button>
                         </Nav>

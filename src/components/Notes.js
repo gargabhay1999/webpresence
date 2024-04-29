@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import "@aws-amplify/ui-react/styles.css";
-import { generateClient, post, get } from 'aws-amplify/api';
+import { generateClient } from 'aws-amplify/api';
 import {
     Button,
     Flex,
@@ -23,78 +23,7 @@ const Notes = () => {
 
     useEffect(() => {
         fetchNotes();
-        getScanData();
-        triggerScan();
     }, []);
-
-    async function getScanData() {
-        try {
-            const restOperation = get({
-                apiName: 'webPresenceCloud',
-                path: '/get-scan-data',
-                options: {
-                    queryParams: {
-                        email: 'test@gmail.com'
-                    }
-                }
-            });
-
-            console.log(restOperation)
-
-            const { body } = await restOperation.response;
-            const response = await body.json();
-
-            console.log('GET call succeeded');
-            console.log(response);
-        } catch (e) {
-            console.log('GET call failed: ', JSON.parse(e.response.body));
-        }
-    }
-
-    async function triggerScan() {
-        try {
-            const restOperation = get({
-                apiName: 'webPresenceCloud',
-                path: '/trigger-scan',
-                options: {
-                    queryParams: {
-                        email: 'test@gmail.com'
-                    }
-                }
-            });
-
-            const { body } = await restOperation.response;
-            const response = await body.json();
-
-            console.log('GET call succeeded');
-            console.log(response);
-        } catch (e) {
-            console.log('GET call failed: ', JSON.parse(e.response.body));
-        }
-    }
-
-
-    // async function postTodo() {
-    //     try {
-    //       const restOperation = post({
-    //         apiName: 'test',
-    //         path: '/user',
-    //         options: {
-    //           body: {
-    //             message: 'Mow the lawn'
-    //           }
-    //         }
-    //       });
-      
-    //       const { body } = await restOperation.response;
-    //       const response = await body.json();
-      
-    //       console.log('POST call succeeded');
-    //       console.log(response);
-    //     } catch (e) {
-    //       console.log('POST call failed: ', JSON.parse(e.response.body));
-    //     }
-    //   }
 
     async function fetchNotes() {
         const apiData = await client.graphql({ query: listNotes });
