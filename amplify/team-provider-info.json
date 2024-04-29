@@ -17,10 +17,25 @@
         "webpresence7f7a11b9": {}
       },
       "api": {
-        "webpresence": {}
+        "webpresence": {},
+        "webPresenceCloud": {}
       },
       "storage": {
         "imagestorage": {}
+      },
+      "function": {
+        "triggerScan": {
+          "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
+          "s3Key": "amplify-builds/triggerScan-4d75424c462b6c396156-build.zip"
+        },
+        "getScanData": {
+          "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
+          "s3Key": "amplify-builds/getScanData-594d464b793874344c54-build.zip"
+        },
+        "config": {
+          "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
+          "s3Key": "amplify-builds/config-6969573536383267427a-build.zip"
+        }
       }
     }
   }

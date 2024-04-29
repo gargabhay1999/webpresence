@@ -1,5 +1,35 @@
 {
   "api": {
+    "webPresenceCloud": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "triggerScan"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getScanData"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "config"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
     "webpresence": {
       "dependsOn": [],
       "output": {
@@ -45,7 +75,74 @@
       "service": "Cognito"
     }
   },
-  "function": {},
+  "function": {
+    "config": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getScanData": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "triggerScan": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_config_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "config"
+        }
+      ]
+    },
+    "AMPLIFY_function_config_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "config"
+        }
+      ]
+    },
+    "AMPLIFY_function_getScanData_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getScanData"
+        }
+      ]
+    },
+    "AMPLIFY_function_getScanData_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getScanData"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerScan_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerScan"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerScan_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerScan"
+        }
+      ]
+    }
+  },
   "storage": {
     "imagestorage": {
       "dependsOn": [],

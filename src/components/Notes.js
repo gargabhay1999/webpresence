@@ -24,7 +24,29 @@ const Notes = () => {
     useEffect(() => {
         fetchNotes();
         // postTodo();
+        getScanData();
     }, []);
+
+    async function getScanData() {
+        try {
+            const restOperation = get({
+                apiName: 'webPresenceCloud',
+                path: '/get-scan-data',
+                params: {
+                    email: 'test@gmail.com'
+                }
+            });
+
+            const { body } = await restOperation.response;
+            const response = await body.json();
+
+            console.log('GET call succeeded');
+            console.log(response);
+        } catch (e) {
+            console.log('GET call failed: ', JSON.parse(e.response.body));
+        }
+    }
+
 
     // async function postTodo() {
     //     try {

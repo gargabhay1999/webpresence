@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "paths": {
+    "/trigger-scan": {
+      "name": "/trigger-scan",
+      "lambdaFunction": "triggerScan",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
+    },
+    "/get-scan-data": {
+      "name": "/get-scan-data",
+      "lambdaFunction": "getScanData",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "read"
+        ]
+      }
+    },
+    "/config": {
+      "name": "/config",
+      "lambdaFunction": "config",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}
