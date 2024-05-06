@@ -28,7 +28,6 @@ const NavBar = ({ signOut }) => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav variant="underline" defaultActiveKey="/home" className="me-auto">
                             <Nav.Link href="dashboard" className="underline-on-active">Dashboard</Nav.Link>
-                            <Nav.Link href="notes" className="underline-on-active">Notes</Nav.Link>
                         </Nav><Nav>
                             <NavDropdown title={"User"} id="collapsible-nav-dropdown">
                                 <NavDropdown.Item href="#" className="underline-on-active">Profile</NavDropdown.Item>
