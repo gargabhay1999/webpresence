@@ -59,7 +59,7 @@ app.get('/trigger-scan', async function (req, res) {
         TableName: 'webpresence-scan-storage',
         Item: {
           'user_email': email,
-          'timestamp': Date.now().toString(),
+          'timestamp': Math.floor(Date.now() / 1000).toString(),
           'scan_data': JSON.stringify(scanData)
         }
       };

@@ -9,7 +9,7 @@ import {
 } from "@aws-amplify/ui-react";
 
 
-const NavBar = ({ signOut }) => {
+const NavBar = ({ isAuthenticated, onSignOut }) => {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -26,13 +26,15 @@ const NavBar = ({ signOut }) => {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav variant="underline" defaultActiveKey="/home" className="me-auto">
+                        {isAuthenticated && <Nav variant="underline" defaultActiveKey="/dashboard" className="me-auto">
                             <Nav.Link href="dashboard" className="underline-on-active">Dashboard</Nav.Link>
-                        </Nav><Nav>
-                            <NavDropdown title={"User"} id="collapsible-nav-dropdown">
+                        </Nav>}
+                        <Nav>
+                            {isAuthenticated && <NavDropdown title={"User"} id="collapsible-nav-dropdown">
                                 <NavDropdown.Item href="#" className="underline-on-active">Profile</NavDropdown.Item>
-                            </NavDropdown>
-                            <Button onClick={signOut}>Sign Out</Button>
+                            </NavDropdown>}
+                            {!isAuthenticated && <Nav.Link href="signin" className="underline-on-active">Sign In</Nav.Link>}
+                            {isAuthenticated && <Button onClick={onSignOut}>Sign Out</Button>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -41,4 +43,4 @@ const NavBar = ({ signOut }) => {
         </>
     )
 };
-export default withAuthenticator(NavBar);
+export default NavBar;
