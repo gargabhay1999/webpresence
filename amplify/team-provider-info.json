@@ -26,11 +26,11 @@
       "function": {
         "triggerScan": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
-          "s3Key": "amplify-builds/triggerScan-7377506d5052562f6642-build.zip"
+          "s3Key": "amplify-builds/triggerScan-78734a6272576b344f54-build.zip"
         },
         "scanData": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
-          "s3Key": "amplify-builds/scanData-4353446b305a72526843-build.zip"
+          "s3Key": "amplify-builds/scanData-733932524e574971657a-build.zip"
         }
       }
     }

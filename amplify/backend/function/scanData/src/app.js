@@ -42,14 +42,15 @@ app.get('/get-scan-data', async function(req, res) {
     KeyConditionExpression: 'user_email = :email',
     ExpressionAttributeValues: {
       ':email': email
-    }
+    },
+    ScanIndexForward: false
   };
   // Perform DynamoDB query
   const data = await dynamodb.query(params).promise();
   console.log("Query response:", data);
 
   // Extract items from query response
-  const items = data.Items;
+  const items = data.Items.sort((a, b) => b.timestamp - a.timestamp);
 
   res.status(200).json(items);
   // res.json({success: 'get call succeedd!', url: req.url});
