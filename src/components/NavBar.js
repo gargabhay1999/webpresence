@@ -16,7 +16,7 @@ const NavBar = ({ isAuthenticated, onSignOut }) => {
                 <Container>
                     <Navbar.Brand href="/">
                         <img
-                            src="logo192.png"
+                            src="logo-small.png"
                             width="50"
                             height="50"
                             className="d-inline-block align-top"
@@ -29,7 +29,7 @@ const NavBar = ({ isAuthenticated, onSignOut }) => {
                         {isAuthenticated && <Nav variant="underline" defaultActiveKey="/dashboard" className="me-auto">
                             <Nav.Link href="dashboard" className="underline-on-active">Dashboard</Nav.Link>
                         </Nav>}
-                        <Nav>
+                        <Nav className='ms-auto'>
                             {isAuthenticated && <NavDropdown title={"User"} id="collapsible-nav-dropdown">
                                 <NavDropdown.Item href="#" className="underline-on-active">Profile</NavDropdown.Item>
                             </NavDropdown>}

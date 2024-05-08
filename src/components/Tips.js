@@ -8,7 +8,7 @@ import { getCurrentUser } from 'aws-amplify/auth';
 
 function DataRemovalTips() {
   return (
-    <div className="data-removal-tips">
+    <div className="limit-width">
       <h2>Steps to Remove Your Data From Websites</h2>
       <ul>
         <li>
@@ -39,7 +39,7 @@ function DataRemovalTips() {
 
 function InternetSecurityTips() {
   return (
-    <div className="internet-security-tips">
+    <div className="limit-width">
       <h2>Tips to Protect Your Data on the Internet</h2>
       <ul>
         <li>

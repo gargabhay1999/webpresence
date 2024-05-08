@@ -21,10 +21,10 @@ const App = () => {
     try {
       await getCurrentUser();
       setIsAuthenticated(true);
-      console.log('User is signed inn');
+      console.log('User is signed in');
     } catch (error) {
       setIsAuthenticated(false);
-      console.error('User is not signed inn');
+      console.error('User is not signed in');
     }
   };
 
@@ -42,7 +42,11 @@ const App = () => {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<NavBar isAuthenticated={isAuthenticated} onSignOut={handleSignOut}/>}>
-        <Route index element={<Home isAuthenticated={isAuthenticated} onSignOut={handleSignOut}/>} />
+        {isAuthenticated ? (
+      <Route index element={<Dashboard isAuthenticated={isAuthenticated} onSignOut={handleSignOut}/>} />
+    ) : (
+      <Route index element={<Home isAuthenticated={isAuthenticated} onSignOut={handleSignOut}/>} />
+    )}
         <Route path="signin" element={<SignIn />} />
         <Route path="dashboard" element={<Dashboard isAuthenticated={isAuthenticated} onSignOut={handleSignOut}/>} />
         <Route path="tips" element={<Tips isAuthenticated={isAuthenticated} onSignOut={handleSignOut}/>} />

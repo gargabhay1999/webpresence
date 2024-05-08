@@ -37,12 +37,7 @@
   }
 }
 
-.data-removal-tips {
-  max-width: 60%;
-  margin: 0 auto; /* Center the container horizontally */
-}
-
-.internet-security-tips {
+.limit-width {
   max-width: 60%;
   margin: 0 auto; /* Center the container horizontally */
 }

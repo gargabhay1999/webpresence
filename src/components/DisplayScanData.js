@@ -58,7 +58,7 @@ const DisplayScanData = ({ scanData, selectedTimestamp }) => {
                 </div>
                 <div>
                     <h3>Social Media Presence</h3>
-                    <p>Instagram: {instagram_exists ? 'Exists' : 'Does not exist'}</p>
+                    {/* <p>Instagram: {instagram_exists ? 'Exists' : 'Does not exist'}</p> */}
                     <p>Twitter: {twitter_exists ? 'Exists' : 'Does not exist'}</p>
                     <p>Spotify: {spotify_exists ? 'Exists' : 'Does not exist'}</p>
                 </div>
