@@ -34,9 +34,8 @@ const DisplayScanData = ({ scanData, selectedTimestamp }) => {
 
     return (
         <View>
-            <u><h3 level={2}>Scan Data for Timestamp: {selectedTimestamp}</h3></u>
+            <h3 level={2}>Timestamp: {selectedTimestamp}</h3>
             <div>
-                <u><h2>Scan Results</h2></u>
                 <div>
                     <h3>Email</h3>
                     <p>{email}</p>

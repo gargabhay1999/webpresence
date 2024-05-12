@@ -22,17 +22,27 @@ const Dashboard = ({ isAuthenticated, onSignOut }) => {
     useLayoutEffect(() => {
         checkAuthStatus();
         if (isAuthenticated) {
-          setIsLoading(false);
+            setIsLoading(false);
         }
-      }, [isAuthenticated]);
+    }, [isAuthenticated]);
+
+    useLayoutEffect(() => {
+        if (isAuthenticated) {
+            getScanData();
+        }
+    }, [isAuthenticated]);
+
+    useLayoutEffect(() => {
+        if (scanData.length > 0) {
+            showScanData(scanData[0].timestamp);
+        }
+    }, [scanData]);
 
     const checkAuthStatus = async () => {
         try {
             await getCurrentUser();
             isAuthenticated = true;
-            console.log(isAuthenticated);
             setIsLoading(false);
-            console.log('User is signed in');
         } catch (error) {
             isAuthenticated = false;
             console.log(isAuthenticated);
@@ -105,36 +115,40 @@ const Dashboard = ({ isAuthenticated, onSignOut }) => {
 
     return (
         <>
-        {console.log('isAuthenticated:', isAuthenticated)}
-        {/* {!isAuthenticated ? window.location.href = '/signin' : ""} */}
-        <View className="App">
-            <Heading level={1}>Dashboard</Heading>
-            <View>
-                <Button onClick={getScanData}>Get Scanned Data</Button>
-                <Button onClick={triggerScan}>Trigger Scan</Button>{''}
-                <Flex
-                    key="scanData"
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                >
-                    {/* Display timestamps as buttons */}
-                    {scanData.map((data) => (
-                        <Button
-                            key={data.timestamp}
-                            variant={data.timestamp === selectedTimestamp ? 'cta' : 'primary'}
-                            onClick={() => showScanData(data.timestamp)}
-                        >
-                            {formatTimestamp(data.timestamp)}
-                        </Button>
-                    ))}
-                </Flex>
+            <View className="App">
+                <Heading level={1}>Dashboard</Heading>
+                <View>
+                    <Button onClick={getScanData}>Get Scanned Data</Button>
+                    <Button onClick={triggerScan}>Trigger Scan</Button>{''}
+                </View>
             </View>
-            {/* Show scan data for the selected timestamp */}
-            {selectedTimestamp && (
-                <DisplayScanData scanData={selectedScanData} selectedTimestamp={selectedTimestamp} />
-            )}
-        </View>
+
+            <div className="dashboard-container">
+                <div className="scan-history">
+                    <Heading level={2}>Scan History</Heading>
+                    {scanData.length === 0 && <p>No scan data available. Click on Get Scanned Data to fetch the data.</p>}
+                    <ul>
+                        {scanData.map((data) => (
+                            <li key={data.timestamp}>
+                                <Button
+                                    variant={data.timestamp === selectedTimestamp ? 'cta' : 'primary'}
+                                    onClick={() => showScanData(data.timestamp)}
+                                >
+                                    {formatTimestamp(data.timestamp)}
+                                </Button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="scan-result">
+                    <Heading level={2}>Scan Result</Heading>
+                    {!selectedTimestamp && <p>Select a timestamp to view the scan data.</p>}
+                    {selectedTimestamp && (
+                        <DisplayScanData scanData={selectedScanData} selectedTimestamp={selectedTimestamp} />
+                    )}
+                </div>
+
+            </div>
         </>
     )
 }

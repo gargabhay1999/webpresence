@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,5 +40,31 @@
 
 .limit-width {
   max-width: 60%;
-  margin: 0 auto; /* Center the container horizontally */
+  margin: 0 auto;
+  /* Center the container horizontally */
+}
+
+.dashboard-container {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-gap: 20px;
+  justify-content: center;
+  /* Align items horizontally at the center */
+  align-items: flex-start;
+  /* Align items vertically at the top */
+  margin-top: 50px;
+  /* Adjust the top margin as needed */
+}
+
+.scan-history {
+  grid-column: 1;
+  margin-right: 50px;
+}
+
+.scan-result {
+  grid-column: 2 / span 2;
+}
+
+.actions {
+  grid-column: 1 / span 3;
 }
