@@ -12,9 +12,7 @@ See the License for the specific language governing permissions and limitations 
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const { exec } = require('child_process');
-const fs = require('fs');
-const AWS = require('aws-sdk');
+const { triggerscan } = require('./utility');
 
 // declare a new express app
 const app = express()
@@ -28,53 +26,14 @@ app.use(function (req, res, next) {
   next()
 });
 
-const dynamodb = new AWS.DynamoDB.DocumentClient();
-
 /**********************
  * Example get method *
  **********************/
 
 app.get('/trigger-scan', async function (req, res) {
-  // Add your code here
   const { email } = req.query;
-  console.log("Making mosint scan for :", email);
-
-  const command = `/var/task/mosint-x86_64 ${email} -s -o /tmp/output.json -c /var/task/config.yaml`;
-  console.log("Executing command:", command);
-
-  exec(command, (error, stdout, stderr) => {
-    if (error) {
-      console.error(`Error executing command: ${error}`);
-      return res.status(500).json({ error: 'Failed to execute scan' });
-    }
-
-    fs.readFile('/tmp/output.json', 'utf8', (err, data) => {
-      if (err) {
-        console.error(`Error reading file: ${err}`);
-        return res.status(500).json({ error: 'Failed to read scan data' });
-      }
-
-      const scanData = JSON.parse(data);
-      const params = {
-        TableName: 'webpresence-scan-storage',
-        Item: {
-          'user_email': email,
-          'timestamp': Math.floor(Date.now() / 1000).toString(),
-          'scan_data': JSON.stringify(scanData)
-        }
-      };
-
-      dynamodb.put(params, (err, data) => {
-        if (err) {
-          console.error(`DynamoDB error: ${err}`);
-          return res.status(500).json({ error: 'Failed to store scan data' });
-        }
-
-        return res.json({ scanData });
-      });
-
-    });
-  });
+  const scanData = await triggerscan(email);
+  return res.json({ scanData });
 });
 
 app.get('/trigger-scan/*', function (req, res) {
