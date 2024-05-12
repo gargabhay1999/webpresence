@@ -17,26 +17,26 @@
           ],
           "category": "function",
           "resourceName": "scanData"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "userProfile"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "triggerAlert"
         }
       ],
       "providerPlugin": "awscloudformation",
       "service": "API Gateway"
-    },
-    "webpresence": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
-            },
-            "authenticationType": "API_KEY"
-          }
-        }
-      },
-      "providerPlugin": "awscloudformation",
-      "service": "AppSync"
     }
   },
   "auth": {
@@ -73,8 +73,20 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "triggerAlert": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "triggerScan": {
       "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "userProfile": {
+      "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
@@ -96,6 +108,22 @@
         }
       ]
     },
+    "AMPLIFY_function_triggerAlert_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerAlert"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerAlert_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerAlert"
+        }
+      ]
+    },
     "AMPLIFY_function_triggerScan_deploymentBucketName": {
       "usedBy": [
         {
@@ -109,6 +137,22 @@
         {
           "category": "function",
           "resourceName": "triggerScan"
+        }
+      ]
+    },
+    "AMPLIFY_function_userProfile_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_userProfile_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userProfile"
         }
       ]
     }
