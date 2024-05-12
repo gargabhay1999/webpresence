@@ -14,6 +14,11 @@ const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const AWS = require('aws-sdk');
 
+AWS.config.update({
+  region: 'us-east-1'
+});
+const ses = new AWS.SES();
+
 // declare a new express app
 const app = express()
 app.use(bodyParser.json())
@@ -53,9 +58,30 @@ app.get('/user-profile', async function (req, res) {
   }
 });
 
-app.get('/user-profile/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'get call succeed!', url: req.url });
+app.get('/user-profile/check-email-verification', async function (req, res) {
+  const { email } = req.query;
+  try {
+    console.log("Checking email verification for:", email);
+    const data = await ses.getIdentityVerificationAttributes({
+      Identities: [email]
+    }).promise();
+    // Check if the email address is verified
+    const verificationAttributes = data.VerificationAttributes[email];
+    const isVerified = verificationAttributes && verificationAttributes.VerificationStatus === 'Success';
+
+    if(!isVerified) {
+      console.log("Email not verified. Sending verification email to:", email);
+      const response = await ses.verifyEmailIdentity({
+        EmailAddress: email
+      }).promise();
+
+      console.log("Verification email sent:", response);
+    }
+    res.json({ isVerified });
+  } catch (err) {
+    console.log("Error fetching :", err);
+    res.status(500).json(err);
+  }
 });
 
 /****************************
