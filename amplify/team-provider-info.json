@@ -33,7 +33,7 @@
         },
         "userProfile": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
-          "s3Key": "amplify-builds/userProfile-755a656135456163794d-build.zip"
+          "s3Key": "amplify-builds/userProfile-3650336d624953744332-build.zip"
         },
         "triggerAlert": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
