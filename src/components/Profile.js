@@ -33,7 +33,23 @@ function ProfileMain() {
 
                 const { body } = await restOperation.response;
                 const response = await body.json();
-                setIsSubscribed(response['Items'][0]['is_subscribed']);
+                if (response['Items'].length > 0) {
+                        setIsSubscribed(response['Items'][0]['is_subscribed']);
+                    } else {
+                    const restOperation = post({
+                        apiName: 'webPresenceCloud',
+                        path: '/user-profile',
+                        options: {
+                            body: {
+                                isSubscribed: false,
+                                email: email
+                            }
+                        }
+                    });
+                    const { body } = await restOperation.response;
+                    const response = await body.json();
+                    setIsSubscribed(false);
+                }
             } catch (error) {
                 console.error('Error fetching user preferences');
             }
