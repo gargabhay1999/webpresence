@@ -4,8 +4,7 @@
       {
           "Effect": "Allow",
           "Action": [
-              "dynamodb:Query",
-              "ses:*"
+              "dynamodb:Query"
           ]
       }
   ]

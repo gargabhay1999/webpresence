@@ -12,7 +12,7 @@ See the License for the specific language governing permissions and limitations 
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
-const { triggerscan } = require('./utility');
+const AWS = require('aws-sdk');
 
 // declare a new express app
 const app = express()
@@ -26,17 +26,34 @@ app.use(function (req, res, next) {
   next()
 });
 
+const dynamodb = new AWS.DynamoDB.DocumentClient();
+
+
 /**********************
  * Example get method *
  **********************/
 
-app.get('/trigger-scan', async function (req, res) {
+app.get('/user-profile', async function (req, res) {
+  console.log("GET request: ", req)
   const { email } = req.query;
-  const scanData = await triggerscan(email);
-  return res.json({ scanData });
+  const params = {
+    TableName: 'user-preferences',
+    KeyConditionExpression: 'user_email = :email',
+    ExpressionAttributeValues: {
+      ':email': email
+    },
+  };
+  try {
+    const data = await dynamodb.query(params).promise();
+    console.log("Query response:", data);
+    res.status(200).json(data);
+  } catch (err) {
+    console.log("Error fetching :", err);
+    res.status(500).json(err);
+  }
 });
 
-app.get('/trigger-scan/*', function (req, res) {
+app.get('/user-profile/*', function (req, res) {
   // Add your code here
   res.json({ success: 'get call succeed!', url: req.url });
 });
@@ -45,12 +62,23 @@ app.get('/trigger-scan/*', function (req, res) {
 * Example post method *
 ****************************/
 
-app.post('/trigger-scan', function (req, res) {
-  // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+app.post('/user-profile', async function (req, res) {
+  const { email, isSubscribed } = req.body;
+  console.log("Making post request to DynamoDB for:", email, isSubscribed);
+  const params = {
+    TableName: 'user-preferences',
+    Item: {
+      'user_email': email,
+      'is_subscribed': isSubscribed
+    }
+  };
+  const data = dynamodb.put(params).promise();
+  console.log("Post response:", data);
+  res.status(200).json(data);
+  // res.json({success: 'post call succeed!', url: req.url, body: req.body})
 });
 
-app.post('/trigger-scan/*', function (req, res) {
+app.post('/user-profile/*', function (req, res) {
   // Add your code here
   res.json({ success: 'post call succeed!', url: req.url, body: req.body })
 });
@@ -59,12 +87,12 @@ app.post('/trigger-scan/*', function (req, res) {
 * Example put method *
 ****************************/
 
-app.put('/trigger-scan', function (req, res) {
+app.put('/user-profile', function (req, res) {
   // Add your code here
   res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
 
-app.put('/trigger-scan/*', function (req, res) {
+app.put('/user-profile/*', function (req, res) {
   // Add your code here
   res.json({ success: 'put call succeed!', url: req.url, body: req.body })
 });
@@ -73,12 +101,12 @@ app.put('/trigger-scan/*', function (req, res) {
 * Example delete method *
 ****************************/
 
-app.delete('/trigger-scan', function (req, res) {
+app.delete('/user-profile', function (req, res) {
   // Add your code here
   res.json({ success: 'delete call succeed!', url: req.url });
 });
 
-app.delete('/trigger-scan/*', function (req, res) {
+app.delete('/user-profile/*', function (req, res) {
   // Add your code here
   res.json({ success: 'delete call succeed!', url: req.url });
 });

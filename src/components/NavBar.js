@@ -4,8 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Outlet } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import {
-    Button,
-    withAuthenticator,
+    Button
 } from "@aws-amplify/ui-react";
 
 
@@ -31,7 +30,7 @@ const NavBar = ({ isAuthenticated, onSignOut }) => {
                         </Nav>}
                         <Nav className='ms-auto'>
                             {isAuthenticated && <NavDropdown title={"User"} id="collapsible-nav-dropdown">
-                                <NavDropdown.Item href="#" className="underline-on-active">Profile</NavDropdown.Item>
+                                <NavDropdown.Item href="profile" className="underline-on-active">Profile</NavDropdown.Item>
                             </NavDropdown>}
                             {!isAuthenticated && <Nav.Link href="signin" className="underline-on-active">Sign In</Nav.Link>}
                             {isAuthenticated && <Button onClick={onSignOut}>Sign Out</Button>}

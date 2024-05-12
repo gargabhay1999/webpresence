@@ -17,7 +17,6 @@
         "webpresence7f7a11b9": {}
       },
       "api": {
-        "webpresence": {},
         "webPresenceCloud": {}
       },
       "storage": {
@@ -26,11 +25,19 @@
       "function": {
         "triggerScan": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
-          "s3Key": "amplify-builds/triggerScan-78734a6272576b344f54-build.zip"
+          "s3Key": "amplify-builds/triggerScan-4f367465674c4e56734c-build.zip"
         },
         "scanData": {
           "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
           "s3Key": "amplify-builds/scanData-733932524e574971657a-build.zip"
+        },
+        "userProfile": {
+          "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
+          "s3Key": "amplify-builds/userProfile-755a656135456163794d-build.zip"
+        },
+        "triggerAlert": {
+          "deploymentBucketName": "amplify-amplify8e74625803634-staging-5eb51-deployment",
+          "s3Key": "amplify-builds/triggerAlert-3362566c62664c36696d-build.zip"
         }
       }
     }

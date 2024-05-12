@@ -26,6 +26,32 @@
           "delete"
         ]
       }
+    },
+    "/user-profile": {
+      "name": "/user-profile",
+      "lambdaFunction": "userProfile",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/trigger-alert": {
+      "name": "/trigger-alert",
+      "lambdaFunction": "triggerAlert",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
     }
   }
 }

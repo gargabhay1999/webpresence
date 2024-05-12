@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "triggerScan",
+            "triggerAlert",
             {
               "Fn::Join": [
                 "",
                 [
-                  "triggerScan",
+                  "triggerAlert",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "webpresenceLambdaRole2999a477",
+            "webpresenceLambdaRole2e039b71",
             {
               "Fn::Join": [
                 "",
                 [
-                  "webpresenceLambdaRole2999a477",
+                  "webpresenceLambdaRole2e039b71",
                   "-",
                   {
                     "Ref": "env"
@@ -229,17 +229,17 @@
         "Ref": "LambdaExecutionRole"
       }
     },
+    "CloudWatchEventRule": {
+      "Value": {
+        "Ref": "CloudWatchEvent"
+      }
+    },
     "LambdaExecutionRoleArn": {
       "Value": {
         "Fn::GetAtt": [
           "LambdaExecutionRole",
           "Arn"
         ]
-      }
-    },
-    "CloudWatchEventRule": {
-      "Value": {
-        "Ref": "CloudWatchEvent"
       }
     }
   }

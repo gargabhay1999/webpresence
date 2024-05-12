@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-// import { withAuthenticator } from 'aws-amplify-react';
 import {
-    Button,
     withAuthenticator,
 } from "@aws-amplify/ui-react";
 
