@@ -69,7 +69,7 @@ const App = () => {
     try {
       await signOut();
       setIsAuthenticated(false);
-      window.location.href = '/signin';
+      window.location.href = '/';
     } catch (error) {
       console.error('Error signing out: ', error);
     }
