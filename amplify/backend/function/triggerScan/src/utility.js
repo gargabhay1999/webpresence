@@ -89,6 +89,16 @@ const triggerscan = async (email) => {
                             });
                         }
 
+                        if (scanData["haveibeenpwned"] && scanData["haveibeenpwned"].length > 0) {
+                            emailString += "\nBreach Data:\n";
+                            scanData["haveibeenpwned"].forEach(breach => {
+                                emailString += "Name: " + breach["Name"] + "\n";
+                                emailString += "Domain: " + breach["Domain"] + "\n";
+                                emailString += "Breach Date: " + breach["BreachDate"] + "\n";
+                                emailString += "Description: " + breach["Description"] + "\n\n";
+                            });
+                        }
+
                         console.log("Email String:", emailString);
 
                         const ses = new AWS.SES({ apiVersion: '2010-12-01' });

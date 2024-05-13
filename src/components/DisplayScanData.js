@@ -11,7 +11,7 @@ import { Button } from "react-bootstrap";
 const DisplayScanData = ({ scanData, selectedTimestamp }) => {
 
     scanData = JSON.parse(scanData);
-    const { email, ipapi, google_search, instagram_exists, twitter_exists, spotify_exists } = scanData;
+    const { email, ipapi, google_search, twitter_exists, spotify_exists, haveibeenpwned } = scanData;
 
 
     useEffect(() => {
@@ -29,6 +29,26 @@ const DisplayScanData = ({ scanData, selectedTimestamp }) => {
             );
         } else {
             return <Text>No Google search results found.</Text>;
+        }
+    };
+
+    const renderBreachData = () => {
+        if (haveibeenpwned && haveibeenpwned.length > 0) {
+            return (
+                <View>
+                    <h3>Have I Been Pwned</h3>
+                    {haveibeenpwned.map((breach, index) => (
+                        <div key={index}>
+                            <h4>Name: {breach.Name}</h4>
+                            <p>Domain: {breach.Domain}</p>
+                            <p>Breach Date: {breach.BreachDate}</p>
+                            <p>Description: {breach.Description}</p>
+                        </div>
+                    ))}
+                </View>
+            );
+        } else {
+            return <Text>No breaches found.</Text>;
         }
     };
 
@@ -61,6 +81,7 @@ const DisplayScanData = ({ scanData, selectedTimestamp }) => {
                     <p>Twitter: {twitter_exists ? 'Exists' : 'Does not exist'}</p>
                     <p>Spotify: {spotify_exists ? 'Exists' : 'Does not exist'}</p>
                 </div>
+                {renderBreachData()}
                 <Button href="/tips">Remove your data</Button>
             </div>
         </View>
