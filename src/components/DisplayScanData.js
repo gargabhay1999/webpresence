@@ -23,12 +23,13 @@ const DisplayScanData = ({ scanData, selectedTimestamp }) => {
                 <View>
                     <h3>Google Search </h3>
                     {google_search.map((link, index) => (
-                        <Text key={index}>{link}</Text>
+                        <a href={link} key={index} target="_blank">{link} <br /></a> 
                     ))}
+                    <br />
                 </View>
             );
         } else {
-            return <Text>No Google search results found.</Text>;
+            return <Text>No Google search results found. <br /></Text> ;
         }
     };
 
@@ -36,13 +37,14 @@ const DisplayScanData = ({ scanData, selectedTimestamp }) => {
         if (haveibeenpwned && haveibeenpwned.length > 0) {
             return (
                 <View>
-                    <h3>Have I Been Pwned</h3>
+                    <h3>Breach Data</h3>
                     {haveibeenpwned.map((breach, index) => (
                         <div key={index}>
-                            <h4>Name: {breach.Name}</h4>
+                            <h4>{breach.Name}</h4>
                             <p>Domain: {breach.Domain}</p>
                             <p>Breach Date: {breach.BreachDate}</p>
-                            <p>Description: {breach.Description}</p>
+                            <div dangerouslySetInnerHTML={{ __html: breach.Description }} />
+                            <p>Data Classes: {breach.DataClasses.join(', ')}</p>
                         </div>
                     ))}
                 </View>

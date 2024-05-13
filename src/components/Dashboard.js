@@ -123,11 +123,11 @@ const Dashboard = ({ isAuthenticated, onSignOut }) => {
                 </View>
             </View>
 
-            <div className="dashboard-container">
+            <div className="dashboard-container limit-width">
                 <div className="scan-history">
                     <Heading level={2}>Scan History</Heading>
                     {scanData.length === 0 && <p>No scan data available. Trigger a scan to fetch your data for the first time.</p>}
-                    <ul>
+                    <ul className="list-style-type-none">
                         {scanData.map((data) => (
                             <li key={data.timestamp}>
                                 <Button
