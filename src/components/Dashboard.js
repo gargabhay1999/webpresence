@@ -118,7 +118,7 @@ const Dashboard = ({ isAuthenticated, onSignOut }) => {
             <View className="App">
                 <Heading level={1}>Dashboard</Heading>
                 <View>
-                    <Button onClick={getScanData}>Get Scanned Data</Button>
+                    {/* <Button onClick={getScanData}>Get Scanned Data</Button> */}
                     <Button onClick={triggerScan}>Trigger Scan</Button>{''}
                 </View>
             </View>
@@ -126,7 +126,7 @@ const Dashboard = ({ isAuthenticated, onSignOut }) => {
             <div className="dashboard-container">
                 <div className="scan-history">
                     <Heading level={2}>Scan History</Heading>
-                    {scanData.length === 0 && <p>No scan data available. Click on Get Scanned Data to fetch the data.</p>}
+                    {scanData.length === 0 && <p>No scan data available. Trigger a scan to fetch your data for the first time.</p>}
                     <ul>
                         {scanData.map((data) => (
                             <li key={data.timestamp}>
