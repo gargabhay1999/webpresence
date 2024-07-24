@@ -19,6 +19,12 @@ In today's digital age, a significant amount of personal information is availabl
 - Navigate to "Profile" then select "Subscribe" to subscribe to emails about your online footprint
 - Click "Remove data" to receive tips on managing your online presence
 
+## Architecture Diagram
+<img width="1193" alt="image" src="https://github.com/user-attachments/assets/431696eb-c745-4ff8-8d61-e78c01a36158">
+
+## Demo Link
+https://youtu.be/p9Z-7ZSQ6HY
+
 ## Contributing
 
 We welcome to improve WebPresence. If you encounter any issues or have suggestions for new features, please open an issue on the GitHub repository. Pull requests are also appreciated.
