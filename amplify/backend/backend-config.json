@@ -1,0 +1,167 @@
+{
+  "api": {
+    "webPresenceCloud": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "triggerScan"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "scanData"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "userProfile"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "triggerAlert"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "webpresence7f7a11b9": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "scanData": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "triggerAlert": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "triggerScan": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "userProfile": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_scanData_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "scanData"
+        }
+      ]
+    },
+    "AMPLIFY_function_scanData_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "scanData"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerAlert_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerAlert"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerAlert_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerAlert"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerScan_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerScan"
+        }
+      ]
+    },
+    "AMPLIFY_function_triggerScan_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "triggerScan"
+        }
+      ]
+    },
+    "AMPLIFY_function_userProfile_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userProfile"
+        }
+      ]
+    },
+    "AMPLIFY_function_userProfile_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "userProfile"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "imagestorage": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

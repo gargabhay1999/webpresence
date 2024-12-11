@@ -1,0 +1,209 @@
+{
+ "email": "mayankr99@gmail.com",
+ "verified": true,
+ "emailrep": {
+  "email": "",
+  "reputation": "",
+  "suspicious": false,
+  "references": 0,
+  "details": {
+   "blacklisted": false,
+   "malicious_activity": false,
+   "malicious_activity_recent": false,
+   "credentials_leaked": false,
+   "credentials_leaked_recent": false,
+   "data_breach": false,
+   "first_seen": "",
+   "last_seen": "",
+   "domain_exists": false,
+   "domain_reputation": "",
+   "new_domain": false,
+   "days_since_domain_creation": 0,
+   "suspicious_tld": false,
+   "spam": false,
+   "free_provider": false,
+   "disposable": false,
+   "deliverable": false,
+   "accept_all": false,
+   "valid_mx": false,
+   "primary_mx": "",
+   "spoofable": false,
+   "spf_strict": false,
+   "dmarc_enforced": false,
+   "profiles": null
+  }
+ },
+ "breachdirectory": {
+  "success": false,
+  "found": 0,
+  "result": null
+ },
+ "haveibeenpwned": null,
+ "hunter": {
+  "data": {
+   "domain": "",
+   "disposable": false,
+   "webmail": false,
+   "accept_all": false,
+   "pattern": "",
+   "organization": "",
+   "country": "",
+   "state": null,
+   "emails": null,
+   "linked_domains": null
+  },
+  "meta": {
+   "results": 0,
+   "limit": 0,
+   "offset": 0,
+   "params": {
+    "domain": "",
+    "company": null,
+    "type": null,
+    "seniority": null,
+    "department": null
+   }
+  }
+ },
+ "ipapi": {
+  "ip": "142.250.65.165",
+  "version": "IPv4",
+  "city": "Plainview",
+  "region": "New York",
+  "region_code": "NY",
+  "country": "US",
+  "country_name": "United States",
+  "country_code": "US",
+  "country_code_iso3": "USA",
+  "country_capital": "Washington",
+  "country_tld": ".us",
+  "continent_code": "NA",
+  "in_eu": false,
+  "postal": "11803",
+  "latitude": 40.7746,
+  "longitude": -73.4761,
+  "timezone": "America/New_York",
+  "utc_offset": "-0400",
+  "country_calling_code": "+1",
+  "currency": "USD",
+  "currency_name": "Dollar",
+  "languages": "en-US,es-US,haw,fr",
+  "country_area": 9629091,
+  "country_population": 327167434,
+  "asn": "AS15169",
+  "org": "GOOGLE"
+ },
+ "intelx": [
+  "https://intelx.io/?did=8d79e3e6-ff3f-46f4-b0ec-d3670f8aa09a",
+  "https://intelx.io/?did=b5cef46a-e8a1-44d7-bafc-06411089921b",
+  "https://intelx.io/?did=8408581c-6ba8-4e43-8bd7-4284171a0bd9",
+  "https://intelx.io/?did=33ff99ab-9779-4dad-bb16-7901b1aa6dbb",
+  "https://intelx.io/?did=153e1324-08a0-41d2-bbc4-9c3103bd610c",
+  "https://intelx.io/?did=c5bc32b8-cfca-4bc4-afe6-2cff7f855740",
+  "https://intelx.io/?did=6e1a1b9d-cb39-4ceb-bdf4-a88bdd600821",
+  "https://intelx.io/?did=ed281566-1d99-454d-8521-25669ca83e76",
+  "https://intelx.io/?did=b49598eb-ca41-448f-bf6a-55fc9bb18ea1",
+  "https://intelx.io/?did=f4883c78-770c-4e58-bd5d-43baa90b063b",
+  "https://intelx.io/?did=818ab711-4e10-4aec-9e85-474ce706b3b5",
+  "https://intelx.io/?did=44dc0565-a123-4ad6-830a-977453b3b788",
+  "https://intelx.io/?did=552bcca9-2e23-43eb-bbf7-1b9647e1077f",
+  "https://intelx.io/?did=d1f2da98-14f9-45bb-b3c1-a10b7cca5777",
+  "https://intelx.io/?did=5019614f-635a-4071-b021-68f620b80340",
+  "https://intelx.io/?did=c35ba270-1ef0-4af7-b60a-d2fb36878d53",
+  "https://intelx.io/?did=35792b24-2dc4-4229-ae2e-6ac7c95f18d1",
+  "https://intelx.io/?did=e7aa6605-c682-47d5-a5d3-60f8f8ea1d2b",
+  "https://intelx.io/?did=4e68055f-1380-4c1f-b5f4-320441d42cd3",
+  "https://intelx.io/?did=8ef825e4-dce3-4b5a-9cf5-a3a169fcad31",
+  "https://intelx.io/?did=a2d6683d-b5bf-4236-8737-ab2dee00ab09",
+  "https://intelx.io/?did=dbc7df9e-b12b-4e2c-9291-aaca1ae8650e",
+  "https://intelx.io/?did=29e97890-5588-452c-856d-a1d1faa92685",
+  "https://intelx.io/?did=be05d800-d587-4406-bfda-cf1320a4871c",
+  "https://intelx.io/?did=34bd7a8c-2c55-483a-9806-b06212438ed0",
+  "https://intelx.io/?did=66a67e0a-94d4-4983-a176-b997224fa12f",
+  "https://intelx.io/?did=de66c5e9-5598-4b05-b604-2398d316f5eb",
+  "https://intelx.io/?did=cb98a826-a47f-44b7-8b58-ade47b10765c",
+  "https://intelx.io/?did=8a5a5819-3f2a-4e44-affd-736991f15559",
+  "https://intelx.io/?did=43f553fd-95ff-42e1-b928-6fc487bfac86",
+  "https://intelx.io/?did=3cc873cb-2b12-43b5-9be0-73a2efa0a038",
+  "https://intelx.io/?did=dfa58ae8-20d3-4c30-89b6-aac9a607f1b5",
+  "https://intelx.io/?did=a39a0c22-7920-492c-b0ea-ad42738fb0b4",
+  "https://intelx.io/?did=06aec14e-aa34-42a2-979e-4b35a0089a43",
+  "https://intelx.io/?did=786ffe4b-7a0f-4e0b-b8bd-431ed2dc6d3f",
+  "https://intelx.io/?did=305e58f2-d652-44ae-a55a-5ac9e386d266",
+  "https://intelx.io/?did=eb6e9c08-c360-422e-a8ea-e6d855815f53",
+  "https://intelx.io/?did=65422dbf-5ecb-49bf-97c0-cc286f3431a8",
+  "https://intelx.io/?did=d4cfca74-10fd-4dc7-85f6-3112167af394",
+  "https://intelx.io/?did=55d35aaa-e14e-424d-a5a1-ffd15aa38e2f",
+  "https://intelx.io/?did=9b8fd631-296f-4ac6-b665-1002479daaee",
+  "https://intelx.io/?did=442ea6bc-0d9b-4993-8402-8d78a1643e95",
+  "https://intelx.io/?did=ea1d8f63-7279-45fc-bc39-840165c5fe6a",
+  "https://intelx.io/?did=ea0cc017-058c-42a1-8b80-22976fc239b5",
+  "https://intelx.io/?did=46cb1ec6-094a-401e-974c-071c5abdc1ec",
+  "https://intelx.io/?did=a866348d-0b27-498b-823b-1267400a2b6b",
+  "https://intelx.io/?did=f5d59b8e-a44f-451a-be43-f52eb3bfb3e3",
+  "https://intelx.io/?did=6839c627-810a-44c9-909f-b23c5b53648f",
+  "https://intelx.io/?did=1e8ecceb-7467-4c7c-af93-18bb90cd5f15",
+  "https://intelx.io/?did=abd1ff2a-c3a9-480c-b3ad-debb40fea660"
+ ],
+ "psbdmp": [
+  "https://psbdmp.ws/dump/Gg3ZpNvT"
+ ],
+ "instagram_exists": false,
+ "spotify_exists": true,
+ "twitter_exists": true,
+ "google_search": null,
+ "dns_records": [
+  {
+   "Type": "TXT",
+   "Value": "v=spf1 redirect=_spf.google.com"
+  },
+  {
+   "Type": "TXT",
+   "Value": "globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
+  },
+  {
+   "Type": "NS",
+   "Value": "ns2.google.com."
+  },
+  {
+   "Type": "NS",
+   "Value": "ns1.google.com."
+  },
+  {
+   "Type": "NS",
+   "Value": "ns3.google.com."
+  },
+  {
+   "Type": "NS",
+   "Value": "ns4.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "40\talt4.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "10\talt1.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "20\talt2.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "30\talt3.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "5\tgmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "A",
+   "Value": "142.250.65.197"
+  },
+  {
+   "Type": "SOA",
+   "Value": "ns1.google.com."
+  }
+ ]
+}

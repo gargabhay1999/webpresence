@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "paths": {
+    "/trigger-scan": {
+      "name": "/trigger-scan",
+      "lambdaFunction": "triggerScan",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/get-scan-data": {
+      "name": "/get-scan-data",
+      "lambdaFunction": "scanData",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/user-profile": {
+      "name": "/user-profile",
+      "lambdaFunction": "userProfile",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    },
+    "/trigger-alert": {
+      "name": "/trigger-alert",
+      "lambdaFunction": "triggerAlert",
+      "permissions": {
+        "setting": "private",
+        "auth": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ]
+      }
+    }
+  }
+}

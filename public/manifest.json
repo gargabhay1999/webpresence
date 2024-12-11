@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "short_name": "React App",
   "name": "Create React App Sample",
   "icons": [
@@ -9,11 +10,22 @@
     },
     {
       "src": "logo192.png",
+=======
+  "short_name": "WebPresence",
+  "name": "WebPresence App",
+  "icons": [
+    {
+      "src": "logo-small.png",
+>>>>>>> upstream/main
       "type": "image/png",
       "sizes": "192x192"
     },
     {
+<<<<<<< HEAD
       "src": "logo512.png",
+=======
+      "src": "logo-large.png",
+>>>>>>> upstream/main
       "type": "image/png",
       "sizes": "512x512"
     }

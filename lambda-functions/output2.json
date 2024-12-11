@@ -1,0 +1,211 @@
+{
+ "email": "gargabhay1999@gmail.com",
+ "verified": true,
+ "emailrep": {
+  "email": "",
+  "reputation": "",
+  "suspicious": false,
+  "references": 0,
+  "details": {
+   "blacklisted": false,
+   "malicious_activity": false,
+   "malicious_activity_recent": false,
+   "credentials_leaked": false,
+   "credentials_leaked_recent": false,
+   "data_breach": false,
+   "first_seen": "",
+   "last_seen": "",
+   "domain_exists": false,
+   "domain_reputation": "",
+   "new_domain": false,
+   "days_since_domain_creation": 0,
+   "suspicious_tld": false,
+   "spam": false,
+   "free_provider": false,
+   "disposable": false,
+   "deliverable": false,
+   "accept_all": false,
+   "valid_mx": false,
+   "primary_mx": "",
+   "spoofable": false,
+   "spf_strict": false,
+   "dmarc_enforced": false,
+   "profiles": null
+  }
+ },
+ "breachdirectory": {
+  "success": false,
+  "found": 0,
+  "result": null
+ },
+ "haveibeenpwned": null,
+ "hunter": {
+  "data": {
+   "domain": "",
+   "disposable": false,
+   "webmail": false,
+   "accept_all": false,
+   "pattern": "",
+   "organization": "",
+   "country": "",
+   "state": null,
+   "emails": null,
+   "linked_domains": null
+  },
+  "meta": {
+   "results": 0,
+   "limit": 0,
+   "offset": 0,
+   "params": {
+    "domain": "",
+    "company": null,
+    "type": null,
+    "seniority": null,
+    "department": null
+   }
+  }
+ },
+ "ipapi": {
+  "ip": "142.250.72.101",
+  "version": "IPv4",
+  "city": "Plainview",
+  "region": "New York",
+  "region_code": "NY",
+  "country": "US",
+  "country_name": "United States",
+  "country_code": "US",
+  "country_code_iso3": "USA",
+  "country_capital": "Washington",
+  "country_tld": ".us",
+  "continent_code": "NA",
+  "in_eu": false,
+  "postal": "11803",
+  "latitude": 40.7746,
+  "longitude": -73.4761,
+  "timezone": "America/New_York",
+  "utc_offset": "-0400",
+  "country_calling_code": "+1",
+  "currency": "USD",
+  "currency_name": "Dollar",
+  "languages": "en-US,es-US,haw,fr",
+  "country_area": 9629091,
+  "country_population": 327167434,
+  "asn": "AS15169",
+  "org": "GOOGLE"
+ },
+ "intelx": [
+  "https://intelx.io/?did=d94edc93-d022-4e91-bb0f-cfc1f09e3437",
+  "https://intelx.io/?did=5322f16b-e299-4c4d-937a-16040673ef9d",
+  "https://intelx.io/?did=a60f0f4f-7fab-425e-b372-9e436094503f",
+  "https://intelx.io/?did=34863d87-d1d0-48ba-93f6-f407c08ca7ea",
+  "https://intelx.io/?did=a8633568-410b-4972-b7de-aada119181a2",
+  "https://intelx.io/?did=a4ce543c-4cd0-467e-952b-acd5cd326460",
+  "https://intelx.io/?did=005d6d69-11bf-4772-91a7-6fe0a463d25c",
+  "https://intelx.io/?did=609d6f1d-72c9-402d-8427-a3c30349cb5b",
+  "https://intelx.io/?did=5af3b17d-cf46-47d0-8754-e6e71866d5ae",
+  "https://intelx.io/?did=86439998-35c2-4dbf-b630-b6220f94a950",
+  "https://intelx.io/?did=bf1ec2bd-1e7b-4306-b370-c68d185e6158",
+  "https://intelx.io/?did=ce377fc7-f254-415e-874d-b8548dbe3668",
+  "https://intelx.io/?did=bf3f5557-df96-4099-a358-f95c96ed7e5e",
+  "https://intelx.io/?did=ed9ee62e-19f2-4ca1-91c5-ecfffe82d1b5",
+  "https://intelx.io/?did=87047692-482c-40d8-9392-cb5979e5dc6d",
+  "https://intelx.io/?did=d68e5ea4-41a8-4cad-9b40-f2f34fea7d02",
+  "https://intelx.io/?did=7e20a258-70cc-4a06-a741-b1011cd969bb",
+  "https://intelx.io/?did=8c5a3f6d-9c9b-4528-8f84-2483c639e269",
+  "https://intelx.io/?did=7b7927c1-f3cb-4cdc-9571-04df3cb0b6d2",
+  "https://intelx.io/?did=649a2826-7acf-43aa-aeed-9e4dfd347aae",
+  "https://intelx.io/?did=3c1fe3b0-5218-4a15-9d06-1ba2b3e9260f",
+  "https://intelx.io/?did=bb29aae2-9408-485b-8e41-a3acb73fb2fd",
+  "https://intelx.io/?did=c2f24866-efe6-466f-a575-fb9342e7c79b",
+  "https://intelx.io/?did=13c4b323-618c-4a31-8d88-7d5709c43184",
+  "https://intelx.io/?did=6c080b63-453e-4bda-a86b-9a7a90f6e412",
+  "https://intelx.io/?did=96ea9ea9-fc2e-4cb8-9c62-ed0d36e8e4b1",
+  "https://intelx.io/?did=4f8981f3-29ff-45b6-87a5-c744ff537a91",
+  "https://intelx.io/?did=51da8713-9666-4d61-b977-943fcc755812",
+  "https://intelx.io/?did=fd682ca8-e2b3-4837-8b1a-9dec8f10b7e2",
+  "https://intelx.io/?did=be683ad2-2b8a-4d37-8cbf-84bd1babcff5",
+  "https://intelx.io/?did=86720307-02b4-47ac-a956-a7dfb6cf0e18",
+  "https://intelx.io/?did=85b9f7fb-82d4-42b5-8ecc-9210625b1e57",
+  "https://intelx.io/?did=8575d36a-cabf-45c0-b120-3eb064ed14cc",
+  "https://intelx.io/?did=bf7c4744-35b5-4055-b2af-6f389695ebc7",
+  "https://intelx.io/?did=d117de31-9666-4d6b-8e9c-da3bc8c8eea8",
+  "https://intelx.io/?did=c26756d0-7193-4a42-8035-e58168a96182",
+  "https://intelx.io/?did=f626d0ec-8047-487a-bfed-3a293d5c4dbb",
+  "https://intelx.io/?did=75512ccd-bef3-4fc9-8577-341d329b33b8",
+  "https://intelx.io/?did=0383c69d-d565-4b23-8b16-6bd86bbb208a",
+  "https://intelx.io/?did=e7d1c0a1-08df-477a-83be-8275e31e9e01",
+  "https://intelx.io/?did=e6986f7c-f1f3-42ec-ac84-9543bd18ad20",
+  "https://intelx.io/?did=65d03318-61b3-4001-85a8-bd13256a1616",
+  "https://intelx.io/?did=6e2a3bca-a625-4efe-828c-e5a57c59756c",
+  "https://intelx.io/?did=43218988-3041-4bca-b81f-c4bf2615b24c",
+  "https://intelx.io/?did=7df7ddb4-7443-4810-a784-0da81663169d",
+  "https://intelx.io/?did=3e3cb534-a4f8-477d-851c-237e9dd7a713",
+  "https://intelx.io/?did=a936ba3d-35c9-4589-a718-a1f8cbbe5d9e",
+  "https://intelx.io/?did=f2b5976c-a7de-4bc8-80f5-d76399ba7d4b",
+  "https://intelx.io/?did=be187711-8046-4103-b0d4-f7ee0914d0ba",
+  "https://intelx.io/?did=30e0fa5c-b63b-424d-a6e8-4f40cf01c100"
+ ],
+ "psbdmp": null,
+ "instagram_exists": false,
+ "spotify_exists": true,
+ "twitter_exists": true,
+ "google_search": [
+  "https://gargabhay1999.github.io/",
+  "https://github.com/UmJK/Movie-Booking-System/blob/master/mbs.sql",
+  "https://support.toastmastersclubs.org/2011-10-23-13-03-18/support-requests/34459-no-contents-are-shown-in-website"
+ ],
+ "dns_records": [
+  {
+   "Type": "TXT",
+   "Value": "v=spf1 redirect=_spf.google.com"
+  },
+  {
+   "Type": "TXT",
+   "Value": "globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
+  },
+  {
+   "Type": "NS",
+   "Value": "ns2.google.com."
+  },
+  {
+   "Type": "NS",
+   "Value": "ns1.google.com."
+  },
+  {
+   "Type": "NS",
+   "Value": "ns3.google.com."
+  },
+  {
+   "Type": "NS",
+   "Value": "ns4.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "40\talt4.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "5\tgmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "10\talt1.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "30\talt3.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "MX",
+   "Value": "20\talt2.gmail-smtp-in.l.google.com."
+  },
+  {
+   "Type": "A",
+   "Value": "142.250.65.197"
+  },
+  {
+   "Type": "SOA",
+   "Value": "ns1.google.com."
+  }
+ ]
+}
